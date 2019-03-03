@@ -21,7 +21,7 @@ function makeCustomer(max){
             customer.push(last[getRandomInt(last.length)])
         }
         if(i === 2){
-            customer.push(getRandomInt(getRandomInt(4000)))
+            customer.push(getRandomInt(4000))
         }
         if(i === 3){
             customer.push(address[getRandomInt(address.length)])
