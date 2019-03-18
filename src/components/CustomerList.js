@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { makeCustomer } from '../customers';
-import { alphabetizer } from '../alpahbetizer'
-
+import { makeCustomer } from '../helpers/customers';
+import { alphatize } from '../helpers/abc';
 
 
 
@@ -25,16 +24,12 @@ class CustomerList extends Component {
         }
         return newArray 
     }
-    abcOrder(){
-        var stateCopy = this.state.customers
-        var newArray = []
-        for(var i = 0; i < stateCopy.length; i++){
-            console.log('Constant is ' + stateCopy[i])
-
-            for(var x = 0; x < stateCopy.length; x++){
-                console.log('Comparison is ' + stateCopy[x])
-            }
-        }
+    abcOrder(input){
+        var newOrder = alphatize(input)
+        
+        this.setState({
+            customers: newOrder
+        })
     }
     chronoOrder(){
 
@@ -44,7 +39,7 @@ class CustomerList extends Component {
 		return (
 			<div>
                 <div> 
-                   <button onClick={()=>alphabetizer(this.state.customers)} >ABC</button>
+                   <button onClick={()=>this.abcOrder(this.state.customers)} >ABC</button>
                    <button>Date</button> 
                 </div>
                 
