@@ -76,7 +76,7 @@ function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
 }
 
-function makeCustomer(max) {
+function generate(max) {
 	var totalCustomer = [];
 	for (var x = 0; x < max; x++) {
 		var customer = [];
@@ -103,8 +103,8 @@ function makeCustomer(max) {
 		//console.log(totalCustomer)
 		//console.log(customer.join(' '))
 	}
-	//console.log(totalCustomer)
+	console.log(totalCustomer)
 	return totalCustomer;
 }
 
-export { makeCustomer };
+export {generate}

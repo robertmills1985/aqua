@@ -1,17 +1,3 @@
-var test = [
-	'Mills',
-	'Alba',
-	'Miller',
-	'Codsworth',
-	'Cod',
-	'Zeta',
-	'Bannana',
-	'Bank',
-	'Shit',
-	'Shite',
-	'Mariner',
-	'Aardvark'
-];
 
 var key = [
 	'a',
@@ -57,7 +43,7 @@ function compareNames(a, b) {
 	var longest = 0;
 	if (a.length < b.length) {
 		shortest = a.length;
-		longest = b.length
+		longest = b.length;
 	} else {
 		shortest = b.length;
 		longest = a.length;
@@ -71,19 +57,18 @@ function compareNames(a, b) {
 		bValue = bValue + letterValue(b[i]);
 		if (aValue > bValue) {
 			//console.log('false on iterations ' + i);
-			console.log('names OUT of order', i)
+			console.log('names OUT of order', i);
 			return false;
-		}
-		else if(i === longest-1 && aValue <= bValue) {
-			console.log('names IN order', i)
-			if(aValue === bValue){
-				console.log('SAME values')
+		} else if (i === longest - 1 && aValue <= bValue) {
+			console.log('names IN order', i);
+			if (aValue === bValue) {
+				console.log('SAME values');
 			}
-			return true
+			return true;
 		}
-		
 	}
 }
 compareNames('piss', 'shit');
 compareNames('alma','arizona')
 compareNames('hello','hello')
+
