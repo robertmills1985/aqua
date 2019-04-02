@@ -1,6 +1,5 @@
-import { compareNames } from "./compareNames";
 
-//import {compareNames} from '../helpers/compareNames'
+import {compareNames} from '../helpers/compareNames'
 
 var example = ['John Stuart','Arron Mason','Zack Effron','Art Masona', 'Rob Arizona', 'Gavin Belson', 'Chew Charleston']
 
@@ -30,5 +29,5 @@ function abcOrder(input){
     
     //console.log('new array is ' + inputCopy)
 }
-//abcOrder(example)
+
 export {abcOrder}

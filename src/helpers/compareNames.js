@@ -1,4 +1,3 @@
-
 var key = [
 	'a',
 	'b',
@@ -28,47 +27,67 @@ var key = [
 	'z'
 ];
 
+var capKey = [
+	'A',
+	'B',
+	'C',
+	'D',
+	'E',
+	'F',
+	'G',
+	'H',
+	'I',
+	'J',
+	'K',
+	'L',
+	'M',
+	'N',
+	'O',
+	'P',
+	'Q',
+	'R',
+	'S',
+	'T',
+	'U',
+	'V',
+	'W',
+	'X',
+	'Y',
+	'Z'
+];
+
 function letterValue(input) {
 	var keyValue = 0;
 	for (var i = 0; i < key.length; i++) {
-		if (input === key[i]) {
+		if (input === key[i] || input === capKey[i]) {
 			keyValue = i + 1;
 		}
 	}
 	return keyValue;
 }
-
 function compareNames(a, b) {
+	var answer = true;
 	var shortest = 0;
-	var longest = 0;
 	if (a.length < b.length) {
 		shortest = a.length;
-		longest = b.length;
 	} else {
 		shortest = b.length;
-		longest = a.length;
 	}
-	var aValue = 0;
-	var bValue = 0;
-	for (var i = 0; i < longest; i++) {
-		//console.log(letterValue(a[i]));
-		//console.log(letterValue(b[i]));
-		aValue = aValue + letterValue(a[i]);
-		bValue = bValue + letterValue(b[i]);
-		if (aValue > bValue) {
-			//console.log('false on iterations ' + i);
-			console.log('names OUT of order', i);
-			return false;
-		} else if (i === longest - 1 && aValue <= bValue) {
-			console.log('names IN order', i);
-			if (aValue === bValue) {
-				console.log('SAME values');
-			}
-			return true;
+	var first = a.split('');
+	var second = b.split('');
+	for (var i = 0; i < shortest; i++) {
+		var fir = letterValue(first[i]);
+		var sec = letterValue(second[i]);
+		//console.log(first[i] + ' ' + fir, second[i] + ' ' + sec);
+		if (fir > sec) {
+			answer = false;
+			break;
+		}
+		else if(fir < sec){
+			break;
 		}
 	}
+	return answer;
 }
-compareNames('piss', 'shit');
-compareNames('alma','arizona')
-compareNames('hello','hello')
-
+console.log(compareNames('aaac','aaab'))
+console.log(compareNames('aaaac','aaabbb'))
