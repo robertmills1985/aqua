@@ -89,5 +89,8 @@ function compareNames(a, b) {
 	}
 	return answer;
 }
-console.log(compareNames('aaac','aaab'))
-console.log(compareNames('aaaac','aaabbb'))
+//console.log(compareNames('aaac','aaab'))
+//console.log(compareNames('aaaac','aaabbb'))
+//console.log(compareNames('Aaron','Zack'))
+//console.log(compareNames('Zack','Arron'))
+export { compareNames }

@@ -3,7 +3,7 @@ import { generate } from '../helpers/generate';
 import { checkForLetters } from "../helpers/checkForLetters";
 import {abcOrder} from '../helpers/abcOrder'
 
-var example = ['Sean Aniston','Bob Belcher','Elen Degenerojus','Bob Cole']
+var example = ['John Stuart','Arron Mason','Zack Effron','Art Masona', 'Rob Arizona', 'Gavin Belson', 'Chew Charleston']
 
 const Test = (props) => (
 	<div>
