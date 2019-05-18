@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class CustomerList extends Component{
-    render(){
-        return(
-            <div>
-                <ul>
-                </ul>
-            </div>
-        )
-    }
+function list(input){
+    for(var i = 0; i < input.length; i++)
 }
-export default CustomerList
+
+const CustomerList = (props) => (
+	<div>
+		<h1>Customers</h1>
+		<p>{props.customers}</p>
+	</div>
+);
+
+export default CustomerList;
