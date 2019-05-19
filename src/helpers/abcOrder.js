@@ -68,7 +68,7 @@ function letterValue(input) {
 function compareNames(a, b) {
 	var answer = true;
 	var shortest = 0;
-	var longest
+	var longest = 0;
 	if (a.length < b.length) {
 		shortest = a.length;
 		longest = b.length
