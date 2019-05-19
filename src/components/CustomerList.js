@@ -1,39 +1,23 @@
-import React, {Component} from 'react';
-import { makeCustomer } from '../customers';
+import React, { Component } from 'react';
 
-
-
-class CustomerList extends Component {
-    constructor(){
-        super()
-        this.state = {
-            customers: ['No customers . . .']
-        }
+function list(input) {
+    //console.log(input)
+    var newArray = []
+	if (input === null || input == undefined) {
+		return 'Nothing...';
+	} else {
+		for (var i = 0; i < input.length; i++) {
+			newArray.push(<li>{input[i]}</li>);
+		}
     }
-    generateList(max){
-        this.setState({
-            customers: makeCustomer(max)
-        })
-    }
-    convertToListItem(){
-        var stateCopy = this.state.customers
-        var newArray = []
-        for(var i = 0; i < stateCopy.length; i++){
-            newArray.push(<li>{stateCopy[i]}</li>)
-        }
-        return newArray 
-    }
-	render() {
-		return (
-			<div>
-				<input id="test-quant" placeholder="Enter quantity" />
-				<button onClick={() => this.generateList(document.getElementById('test-quant').value )}>Load Customers</button>
-				<ul id="list" >
-                    {this.convertToListItem()}
-                </ul>
-			</div>
-		);
-	}
+    return newArray
 }
+
+const CustomerList = (props) => (
+	<div>
+		<h1>Customers</h1>
+		<ol>{list(props.customers)}</ol>
+	</div>
+); 
 
 export default CustomerList;
