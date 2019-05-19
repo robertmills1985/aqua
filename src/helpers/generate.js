@@ -103,7 +103,7 @@ function generate(max) {
 		//console.log(totalCustomer)
 		//console.log(customer.join(' '))
 	}
-	console.log(totalCustomer)
+	//console.log(totalCustomer)
 	return totalCustomer;
 }
 
