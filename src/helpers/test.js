@@ -1,3 +1,6 @@
+
+var test = ['Jennifer Robinson', 'Robert Mills', 'Kendra Geare']
+
 var key = [
 	'a',
 	'b',
@@ -65,6 +68,11 @@ function letterValue(input) {
 	}
 	return keyValue;
 }
+
+function getLastName(input) {
+	var lastName = input.split(' ')[1];
+	return lastName;
+}
 function compareNames(a, b) {
 	var answer = true;
 	var shortest = 0;
@@ -89,13 +97,9 @@ function compareNames(a, b) {
 	return answer;
 }
 
-function getLastName(input) {
-	var lastName = input.split(' ')[1];
-	return lastName;
-}
-
 function abcOrder(input) {
-	var inputCopy = input;
+    var inputCopy = input;
+    console.log('Before = ' + inputCopy)
 	for (var i = 0; i < input.length; i++) {
 		for (var x = i; x < input.length; x++) {
 			var con = getLastName(inputCopy[i]);
@@ -109,8 +113,8 @@ function abcOrder(input) {
 				//console.log(inputCopy);
 			}
 		}
-	}
-	return inputCopy
+    }
+    console.log('After =' + inputCopy)
+	//return something
 }
-
-export { abcOrder };
+abcOrder(test)
