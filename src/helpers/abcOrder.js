@@ -68,14 +68,17 @@ function letterValue(input) {
 function compareNames(a, b) {
 	var answer = true;
 	var shortest = 0;
+	var longest
 	if (a.length < b.length) {
 		shortest = a.length;
+		longest = b.length
 	} else {
 		shortest = b.length;
+		longest = a.length
 	}
 	var first = a.split('');
 	var second = b.split('');
-	for (var i = 0; i < shortest; i++) {
+	for (var i = 0; i < longest; i++) {
 		var fir = letterValue(first[i]);
 		var sec = letterValue(second[i]);
 		//console.log(first[i] + ' ' + fir, second[i] + ' ' + sec);
@@ -86,6 +89,7 @@ function compareNames(a, b) {
 			break;
 		}
 	}
+	console.log(answer, fir, first.join(''), sec ,second.join(''))
 	return answer;
 }
 
