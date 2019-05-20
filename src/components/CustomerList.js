@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 function list(input) {
-    //console.log(input)
     var newArray = []
 	if (input === null || input == undefined) {
 		return 'Nothing...';

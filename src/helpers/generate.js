@@ -94,16 +94,9 @@ function generate(max) {
 				customer.push(address[getRandomInt(address.length)]);
 				var format = customer.join(' ');
 				totalCustomer.push(format);
-				//console.log(customer)
-				//console.log('Format is ' + format)
-				//console.log('Total customer is ' + totalCustomer)
 			}
 		}
-		//totalCustomer.push(format)
-		//console.log(totalCustomer)
-		//console.log(customer.join(' '))
 	}
-	//console.log(totalCustomer)
 	return totalCustomer;
 }
 

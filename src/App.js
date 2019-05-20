@@ -19,9 +19,7 @@ class App extends Component {
 		});
 	}
 	handleAbc() {
-    //console.log(this.state.customers)
     var newOrder = abcOrder(this.state.customers);
-    //console.log('newOrder = ' + newOrder)
 		this.setState({
 			customers: newOrder
 		});

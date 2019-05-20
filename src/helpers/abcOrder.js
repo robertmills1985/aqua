@@ -55,7 +55,8 @@ var capKey = [
 	'Y',
 	'Z'
 ];
-
+/* takes in a single letter and loops over an array to deterime the 
+input letters numerical value then returns that value*/
 function letterValue(input) {
 	var keyValue = 0;
 	for (var i = 0; i < key.length; i++) {
@@ -65,6 +66,8 @@ function letterValue(input) {
 	}
 	return keyValue;
 }
+/* Takes two words or names and loops over each one to determine 
+if "a" does come before "b" or not, returns a boolean */
 function compareNames(a, b) {
 	var answer = true;
 	var shortest = 0;
@@ -81,7 +84,6 @@ function compareNames(a, b) {
 	for (var i = 0; i < longest; i++) {
 		var fir = letterValue(first[i]);
 		var sec = letterValue(second[i]);
-		//console.log(first[i] + ' ' + fir, second[i] + ' ' + sec);
 		if (fir > sec) {
 			answer = false;
 			break;
@@ -89,28 +91,25 @@ function compareNames(a, b) {
 			break;
 		}
 	}
-	console.log(answer, fir, first.join(''), sec ,second.join(''))
 	return answer;
 }
-
+/* Returns the the last name index from its array */
 function getLastName(input) {
 	var lastName = input.split(' ')[1];
 	return lastName;
 }
-
+/* Loops over an array and returns it in alphabetical order based off of last name */
 function abcOrder(input) {
 	var inputCopy = input;
 	for (var i = 0; i < input.length; i++) {
 		for (var x = i; x < input.length; x++) {
 			var con = getLastName(inputCopy[i]);
 			var com = getLastName(inputCopy[x]);
-			//console.log(con + ' ' + com + ' = ' + compareNames(con, com));
 			if (compareNames(con, com) === false) {
 				var a = inputCopy[i];
 				var b = inputCopy[x];
 				inputCopy[i] = b;
 				inputCopy[x] = a;
-				//console.log(inputCopy);
 			}
 		}
 	}
