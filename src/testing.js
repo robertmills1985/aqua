@@ -1,4 +1,31 @@
 var first = [
+	'Mildred',
+	'Scott',
+	'Jerimiah',
+	'Chris',
+	'Bruce',
+	'Christina',
+	'Kaitlyn',
+	'Kat',
+	'Ben',
+	'Benjamin',
+	'Mathew',
+	'Seth',
+	'Cole',
+	'America',
+	'Don',
+	'Donald',
+	'Liz',
+	'Elizebeth',
+	'Arron',
+	'Erin',
+	'Antonio',
+	'Mildred',
+	'David',
+	'Olive',
+	'April',
+	'Summer',
+	'Dani',
 	'Danny',
 	'Matt',
 	'Ben',
@@ -47,33 +74,100 @@ var last = [
 	'Warner',
 	'Robinson',
 	'Stevenson',
-	'Stevenson',
+	'Stevens',
 	'Bruchetta',
 	'Namerson',
-	'Lanskey'
+	'Lanskey',
+	'Sherberger',
+	'Stone',
+	'Parker',
+	'Martinez',
+	'Odeh',
+	'Tadessess',
+	'Gomez',
+	'Hernandez',
+	'Glurpenburg',
+	'Carmichael',
+	'Barro',
+	'Catalina',
+	'Ambock',
+	'Berathian',
+	'Cortez',
+	'Dinklage',
+	'Emerson',
+	'Fugal',
+	'Gacy',
+	'Himachi',
+	'Jamerson',
+	'Keller',
+	'Lougherton',
+	'Mueller',
+	'Nunez',
+	'Oprinicus',
+	'Phinnerman',
+	'Rubeo',
+	'Tammerton',
+	'Samerson',
+	'Vickerton',
+	'Wideman',
+	'Zimmerman'
 ];
 var address = [
-	'E Joan De Arc',
-	'S Olive',
-	'E Norther',
-	'Meyer',
-	'W Baker St',
-	'W Lemon St',
-	'W Norther Rd',
-	'W Mary Jane Ln',
-	'N Bethany Rd',
-	'N Cactus Rd',
-	'N Thunder Bird',
-	'N 67th Ave',
-	'N 71st Ave',
-	'N 75th Ave',
-	'S 32nd St',
-	'S 7th St',
-	'S 12th Ave'
+	'67th',
+	'75th',
+	'59th',
+	'55th',
+	'53rd',
+	'43rd',
+	'35th',
+	'27th',
+	'19th',
+	'7th',
+	'Happey Valley Rd',
+	'Deer Valley Rd',
+	'Union Hills Rd',
+	'Bell Rd',
+	'Greenway Rd',
+	'Thunderbird Rd',
+	'Cactus Rd',
+	'Peoria Rd',
+	'Olive Rd',
+	'Northern Rd'
 ];
+var dir = [ 'N', 'S' ];
+var dir2 = [ 'W', 'E' ];
+var road = [ 'Ave', 'St', 'Dr' ];
 
 function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
+}
+
+function numLet(input) {
+	var isNum = false;
+	var nums = [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
+	for (var i = 0; i < nums.length; i++) {
+		if (input == nums[i]) {
+			isNum = true;
+		}
+	}
+	return isNum;
+	//console.log(`${input} = ${isNum}`)
+}
+
+function getRandomStreet(input) {
+	var newStreet = [];
+	if (numLet(input[0]) != false) {
+		newStreet.push(dir[getRandomInt(dir.length)]);
+	} else {
+		newStreet.push(dir2[getRandomInt(dir2.length)]);
+	}
+	newStreet.push(input);
+	if (newStreet[0] == 'N' || newStreet[0] == 'S') {
+		newStreet.push(road[getRandomInt(road.length)]);
+	}
+	//console.log(newStreet)
+	newStreet = newStreet.join(' ');
+	return newStreet;
 }
 
 function generate(max) {
@@ -91,21 +185,16 @@ function generate(max) {
 				customer.push(getRandomInt(4000));
 			}
 			if (i === 3) {
-				customer.push(address[getRandomInt(address.length)]);
+				customer.push(getRandomStreet(address[getRandomInt(address.length)]));
 				var format = customer.join(' ');
 				totalCustomer.push(format);
-				//console.log(customer)
-				//console.log('Format is ' + format)
-				//console.log('Total customer is ' + totalCustomer)
 			}
 		}
-		//totalCustomer.push(format)
-		//console.log(totalCustomer)
-		//console.log(customer.join(' '))
 	}
-	//console.log(totalCustomer)
 	return totalCustomer;
 }
+
+
 var key = [
 	'a',
 	'b',
@@ -271,17 +360,8 @@ function testing(maxRounds, maxSets, viewCustomers, abcActive) {
 
 function runTest(input) {
 	var arg = input.split(',');
-	console.log(arg);
 	testing(arg[0], arg[1], arg[2], arg[3]);
 }
-//console.log('THE FOLLOWING IS WITHOUT abcOrder()')
-//failCheck(3,2,'on')
-//failCheck(3,5,'on')
-//failCheck(3,7,'off')
-//console.log('THE FOLLOWING IS WITH abcOrder()')
-//testing(3,2,'on')
-//testing(3,5,'on')
-//testing(3,7,'off')
-//console.log('THE FOLLOWING IS WITH abcOrder() DOING 5 ROUNDS WITH A 1000 SETS EACH AND VIEW SET TO OFF')
-//testing(5, 1000, 'off')
-export { runTest };
+
+runTest('2,5,on,on')
+//runTest('3,50,off,on')
