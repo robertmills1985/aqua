@@ -4,7 +4,7 @@ import '../App.css';
 const Test = (props) => (
 	<div>
 		<div>
-			<div class="col s10">
+			<div class="col s10 card-panel">
 				<input id="test-input" placeholder="enter something..." />
 			</div>
 			<button class="btn button" onClick={props.generate}>
