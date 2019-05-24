@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import '../App.css'
 
 function list(input) {
     var newArray = []
@@ -6,16 +7,16 @@ function list(input) {
 		return 'Nothing...';
 	} else {
 		for (var i = 0; i < input.length; i++) {
-			newArray.push(<li>{input[i]}</li>);
+			newArray.push(<li >{input[i]}</li>);
 		}
     }
     return newArray
 }
 
 const CustomerList = (props) => (
-	<div>
-		<h1>Customers</h1>
-		<ol>{list(props.customers)}</ol>
+	<div id='CustomerList'>
+		<h1 class='card-panel'>Customers</h1>
+		<ol id='order-list' >{list(props.customers)}</ol>
 	</div>
 ); 
 

@@ -1,10 +1,17 @@
 import React from 'react';
+import '../App.css';
 
 const Test = (props) => (
 	<div>
-		<input id="test-input" placeholder="enter something..." />
-        <button onClick={props.generate}>generate</button>
-		<button onClick={props.abc}>alphabetical order</button>
+		<div>
+			<div class="col s10">
+				<input id="test-input" placeholder="enter something..." />
+			</div>
+			<button class="btn button" onClick={props.generate}>
+				generate
+			</button>
+		</div>
+		
 	</div>
 );
 

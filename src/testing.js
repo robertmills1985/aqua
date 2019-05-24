@@ -1,3 +1,8 @@
+/* So this is just a copy of all the javascript in one file with a extra function i use for testing and it console logs
+out a bunch of stuff. At the bottom there you can invoke it. It takes in 4 parameters as a single string
+I did this because for some reason my debugger doesnt recognize import or export syntax but i think i really like
+doing it that way now
+*/
 var first = [
 	'Mildred',
 	'Scott',
@@ -362,6 +367,9 @@ function runTest(input) {
 	var arg = input.split(',');
 	testing(arg[0], arg[1], arg[2], arg[3]);
 }
-
-runTest('2,5,on,on')
+/* runTest takes 4 parameters as a single string with commas seperating them.
+First is how many rounds. Second is how many sets per round. Third is on or off and it console logs extra info
+Fourth is on or off and it will toggle abcOrder function on or off*/
+//EXAMPLE BELOW:
+//runTest('2,5,on,on')
 //runTest('3,50,off,on')
