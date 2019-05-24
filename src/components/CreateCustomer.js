@@ -27,7 +27,7 @@ const CreateCustomer = (props) => (
 			</div>
             
 		</div>
-<button class='btn' >Submit</button>
+<button class='btn' onClick={props.handleCreateCustomer} >Submit</button>
 	</div>
 );
 export default CreateCustomer;

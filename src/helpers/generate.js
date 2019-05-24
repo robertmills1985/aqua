@@ -167,7 +167,7 @@ function getRandomStreet(input) {
 	}
 	//console.log(newStreet)
 	newStreet = newStreet.join(' ');
-	console.log(newStreet);
+	//console.log(newStreet);
 	return newStreet;
 }
 
