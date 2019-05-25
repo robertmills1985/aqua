@@ -4,7 +4,7 @@ import '../App.css'
 function list(input) {
     var newArray = []
 	if (input === null || input == undefined) {
-		return 'Nothing...';
+		
 	} else {
 		for (var i = 0; i < input.length; i++) {
 			newArray.push(<li >{input[i]}</li>);
