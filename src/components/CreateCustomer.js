@@ -1,7 +1,10 @@
 import React from 'react';
-import '../App.css'
+import '../App.css';
 const CreateCustomer = (props) => (
-	<div class='card-panel'>
+	<div class="card-panel">
+		<div class="blue">
+			<h5>Add a customer</h5>
+		</div>
 		<div class="row">
 			<div class="col s4 c-input">
 				<p>Enter first name:</p>
@@ -25,9 +28,10 @@ const CreateCustomer = (props) => (
 			<div class="col s7 pull-s1">
 				<input id="c-address" />
 			</div>
-            
 		</div>
-<button class='btn' onClick={props.handleCreateCustomer} >Submit</button>
+		<button class="btn" onClick={props.handleCreateCustomer}>
+			Submit
+		</button>
 	</div>
 );
 export default CreateCustomer;

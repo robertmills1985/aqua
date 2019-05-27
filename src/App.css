@@ -1,8 +1,7 @@
 .line-item {
-    border:solid;
+    border-bottom:solid;
+    border-width: 1px;
     border-color:green;
-    margin-top:3px;
-    margin-bottom:3px;  
 }
 .button {
     margin-left:3px;
@@ -10,4 +9,14 @@
 }
 .c-input {
     margin-right:15px;
+}
+.edit-btn {
+    margin-left:3px;
+    cursor: pointer;
+}
+#delete-input {
+    width:100px;
+}
+#modify-input {
+    width:100px;
 }
