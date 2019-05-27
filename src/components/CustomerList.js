@@ -8,12 +8,12 @@ function list(input) {
 		for (var i = 0; i < input.length; i++) {
 			newArray.push(
 				<div>
-					<li id={i} class="col s10 line-item">
+					<li id={'customer ' + i} class="col s10 line-item">
 						{input[i]}
 					</li>
-					<p class="col s2 card-panel green center edit-btn">
+					{/*<p class="col s2 card-panel green center edit-btn">
 						Edit
-					</p>
+					</p>*/}
 				</div>
 			);
 		}
