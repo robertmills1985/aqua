@@ -11,7 +11,7 @@ const Search = (props) => (
 			</button>
 			<div>
 				<p>Results:</p>
-                <p>{`Total found ${props.results.length}`}</p>
+                <p id='total-found'>{`Total found ${props.results.length}`}</p>
 				<ul>{props.results}</ul>
 			</div>
 		</div>

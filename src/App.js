@@ -101,22 +101,28 @@ class App extends Component {
 		clear('modify-address');
 	}
 	handleSearch(input) {
+		var copy = input
 		var stateCopy = this.state.customers;
-		//console.log(`input is ${input}. stateCopy is ${stateCopy[0].split(' ')[0]}`)
 		var resultsArray = [];
+		
 		for (var i = 0; i < stateCopy.length; i++) {
 			var foundArray = [];
 			var fName = stateCopy[i].split(' ')[0];
 			var lName = stateCopy[i].split(' ')[1];
-			//console.log(`search criteria is ${fName} ${lName}`)
 			if (input === fName || input === lName) {
 				resultsArray.push(<li>{`${i + 1}. ${stateCopy[i]}`}</li>);
 			}
 		}
+		
 		this.setState({
 			results: resultsArray
 		});
+		
 		clear('search-input');
+		if(resultsArray.length === 0){
+			document.getElementById('total-found').innerHTML = 'Nothing was found, try something else.'
+			document.getElementById('search-input').value = copy
+		} 
 	}
 
 	render() {
