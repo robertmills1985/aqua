@@ -108,7 +108,9 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<header id="header" class="blue" />
+				<header id="header" class="blue white-text" >
+				
+				</header>
 				<div>
 					<Search
 						search={() => this.handleSearch(document.getElementById('search-input').value)}

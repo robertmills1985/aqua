@@ -24,6 +24,7 @@ function list(input) {
 const CustomerList = (props) => (
 	<div id="CustomerList">
 		<h1 class="card-panel">Customers</h1>
+		<p>Total customers: {props.customers.length}</p>
 		<ol id="order-list">{list(props.customers)}</ol> 
 	</div>
 );
