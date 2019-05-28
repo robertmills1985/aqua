@@ -8,6 +8,10 @@ import './App.css';
 import ModifyCustomer from './components/ModifyCustomer';
 import Search from './components/Search';
 
+function clear(input){
+	document.getElementById(input).value = ""
+}
+
 class App extends Component {
 	constructor() {
 		super();
@@ -23,6 +27,7 @@ class App extends Component {
 		this.setState({
 			customers: newCustomers
 		});
+		clear('test-input')
 	}
 	handleCreateCustomer(input) {
 		var customers = input;
@@ -38,6 +43,9 @@ class App extends Component {
 		this.setState({
 			customers: customers
 		});
+		clear('c-fname')
+		clear('c-lname')
+		clear('c-address')
 	}
 	handleDelete(input) {
 		var newArray = [];
@@ -57,6 +65,7 @@ class App extends Component {
 		this.setState({
 			customers: newArray
 		});
+		clear('delete-input')
 	}
 	handleModify(input) {
 		var stateCopy = this.state.customers;
@@ -86,6 +95,10 @@ class App extends Component {
 		this.setState({
 			customers: stateCopy
 		});
+		clear('modify-input')
+		clear('modify-lname')
+		clear('modify-fname')
+		clear('modify-address')
 	}
 	handleSearch(input) {
 		var stateCopy = this.state.customers;
@@ -103,6 +116,7 @@ class App extends Component {
 		this.setState({
 			results:resultsArray
 		})
+		clear('search-input')
 	}
 
 	render() {
