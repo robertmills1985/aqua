@@ -38,3 +38,10 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
+#header-title {
+    font-size: 50px;
+    top:0px;
+    padding-left:30px;
+    padding-top:20px;
+}

@@ -8,8 +8,8 @@ import './App.css';
 import ModifyCustomer from './components/ModifyCustomer';
 import Search from './components/Search';
 
-function clear(input){
-	document.getElementById(input).value = ""
+function clear(input) {
+	document.getElementById(input).value = '';
 }
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
 		this.setState({
 			customers: newCustomers
 		});
-		clear('test-input')
+		clear('test-input');
 	}
 	handleCreateCustomer(input) {
 		var customers = input;
@@ -43,9 +43,9 @@ class App extends Component {
 		this.setState({
 			customers: customers
 		});
-		clear('c-fname')
-		clear('c-lname')
-		clear('c-address')
+		clear('c-fname');
+		clear('c-lname');
+		clear('c-address');
 	}
 	handleDelete(input) {
 		var newArray = [];
@@ -65,7 +65,7 @@ class App extends Component {
 		this.setState({
 			customers: newArray
 		});
-		clear('delete-input')
+		clear('delete-input');
 	}
 	handleModify(input) {
 		var stateCopy = this.state.customers;
@@ -95,15 +95,15 @@ class App extends Component {
 		this.setState({
 			customers: stateCopy
 		});
-		clear('modify-input')
-		clear('modify-lname')
-		clear('modify-fname')
-		clear('modify-address')
+		clear('modify-input');
+		clear('modify-lname');
+		clear('modify-fname');
+		clear('modify-address');
 	}
 	handleSearch(input) {
 		var stateCopy = this.state.customers;
 		//console.log(`input is ${input}. stateCopy is ${stateCopy[0].split(' ')[0]}`)
-		var resultsArray = []
+		var resultsArray = [];
 		for (var i = 0; i < stateCopy.length; i++) {
 			var foundArray = [];
 			var fName = stateCopy[i].split(' ')[0];
@@ -114,16 +114,16 @@ class App extends Component {
 			}
 		}
 		this.setState({
-			results:resultsArray
-		})
-		clear('search-input')
+			results: resultsArray
+		});
+		clear('search-input');
 	}
 
 	render() {
 		return (
 			<div>
-				<header id="header" class="blue white-text" >
-				
+				<header id="header" class="blue white-text">
+					<p id='header-title'>Aqua</p>
 				</header>
 				<div>
 					<Search

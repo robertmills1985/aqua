@@ -11,9 +11,6 @@ function list(input) {
 					<li id={'customer ' + i} class="col s10 line-item">
 						{input[i]}
 					</li>
-					{/*<p class="col s2 card-panel green center edit-btn">
-						Edit
-					</p>*/}
 				</div>
 			);
 		}
