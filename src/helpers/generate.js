@@ -138,10 +138,13 @@ var dir = [ 'N', 'S' ];
 var dir2 = [ 'W', 'E' ];
 var road = [ 'Ave', 'St', 'Dr' ];
 
+/* This function takes in a number and generates a random number between 1 and whatever number was inputed. */
 function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
 }
 
+/* This functions takes in a single digit or character string and 
+ determines if it is a number or letter in that string. Returns a boolean. */
 function numLet(input) {
 	var isNum = false;
 	var nums = [ '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
@@ -153,21 +156,28 @@ function numLet(input) {
 	return isNum;
 }
 
+/* This function will generate a random street. Example: W Thunderbird Rd, or N 67th Ave */
 function getRandomStreet(input) {
 	var newStreet = [];
+	/*This below determines the direction of the road based on the roads name. A named street will generate W or E.
+	 A numbered road will generate N or S*/
 	if (numLet(input[0]) != false) {
 		newStreet.push(dir[getRandomInt(dir.length)]);
 	} else {
 		newStreet.push(dir2[getRandomInt(dir2.length)]);
 	}
+	//Pushes the name of the street.
 	newStreet.push(input);
+	/* This below determines the type of road based. Example: Ave, St, Dr  */
 	if (newStreet[0] == 'N' || newStreet[0] == 'S') {
 		newStreet.push(road[getRandomInt(road.length)]);
 	}
 	newStreet = newStreet.join(' ');
 	return newStreet;
 }
-
+/* This below is what randomly generates customers names and addresses. It takes in a number that is the
+ desired amount to be generated. It returns an array with string values
+ in each index */
 function generate(max) {
 	var totalCustomer = [];
 	for (var x = 0; x < max; x++) {

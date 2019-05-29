@@ -55,8 +55,8 @@ var capKey = [
 	'Y',
 	'Z'
 ];
-/* takes in a single letter and loops over an array to deterime the 
-input letters numerical value then returns that value*/
+/* takes in a single letter string value and loops over an array to deterime the 
+inputed letters numerical value, then returns that value*/
 function letterValue(input) {
 	var keyValue = 0;
 	for (var i = 0; i < key.length; i++) {
@@ -66,8 +66,8 @@ function letterValue(input) {
 	}
 	return keyValue;
 }
-/* Takes two words or names and loops over each one to determine 
-if "a" does come before "b" or not, returns a boolean */
+/* Takes two string values and loops over each one to determine 
+if "a" does come before "b", or not, returns a boolean */
 function compareNames(a, b) {
 	var answer = true;
 	var shortest = 0;
@@ -93,12 +93,13 @@ function compareNames(a, b) {
 	}
 	return answer;
 }
-/* Returns the the last name index from its array */
+/* Takes in an index with a string value, splits it and then returns index[1] */
 function getLastName(input) {
 	var lastName = input.split(' ')[1];
 	return lastName;
 }
-/* Loops over an array and returns it in alphabetical order based off of last name */
+/* Loops over an array of string values and returns them in alphabetical order
+ based off of the second word in each index */
 function abcOrder(input) {
 	var inputCopy = input;
 	for (var i = 0; i < input.length; i++) {
