@@ -7,6 +7,16 @@ import { abcOrder } from './helpers/abcOrder';
 import './App.css';
 import ModifyCustomer from './components/ModifyCustomer';
 import Search from './components/Search';
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*I built a simple app that showcases CRUD features. You can create a list of customer accounts, read, modify, and 
+delete the customers. I threw in a search bar too. I used React, Javascript, JSON, and Materializecss with some 
+vanilla CSS */
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 /* This below takes in a string value. An id of a targeted <input /> tag and clears anything written in it */
 function clear(input) {
 	document.getElementById(input).value = '';
