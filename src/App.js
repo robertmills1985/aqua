@@ -7,7 +7,7 @@ import { abcOrder } from './helpers/abcOrder';
 import './App.css';
 import ModifyCustomer from './components/ModifyCustomer';
 import Search from './components/Search';
-
+/* This below takes in a string value. An id of a targeted <input /> tag and clears anything written in it */
 function clear(input) {
 	document.getElementById(input).value = '';
 }
@@ -21,6 +21,8 @@ class App extends Component {
 			results: []
 		};
 	}
+	/* This handles randomly generating a desired amount of customers by the user. See './helpers/generate.js' 
+	It then alphabetizes the list and saves to state. See also './helpers/abcOrder.js' */
 	handleGenerate() {
 		var newCustomers = generate(document.getElementById('test-input').value);
 		newCustomers = abcOrder(newCustomers);
@@ -29,6 +31,7 @@ class App extends Component {
 		});
 		clear('test-input');
 	}
+	/* This handles the creation of a single customer from data inputed by the user. */
 	handleCreateCustomer(input) {
 		var customers = input;
 		var newCustomer = [];
@@ -47,6 +50,7 @@ class App extends Component {
 		clear('c-lname');
 		clear('c-address');
 	}
+	/* This handles the deletion of a single customer by the user */
 	handleDelete(input) {
 		var newArray = [];
 		var stateCopy = this.state.customers;
@@ -62,6 +66,7 @@ class App extends Component {
 		});
 		clear('delete-input');
 	}
+	/* This handles the changing of a customers details with data inputed from the user */
 	handleModify(input) {
 		var stateCopy = this.state.customers;
 		var num = input - 1;
@@ -93,6 +98,7 @@ class App extends Component {
 		clear('modify-fname');
 		clear('modify-address');
 	}
+	/* This handles the searching of specific data, inputed by the user and displays results of the search */
 	handleSearch(input) {
 		var copy = input;
 		var stateCopy = this.state.customers;
