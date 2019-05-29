@@ -4,7 +4,7 @@ const ModifyCustomer = (props) => (
 	<div>
 		<div class="card-panel ">
 			<div class="blue">
-				<h5 class='title'>Modify customer</h5>
+				<h5 class="title">Modify customer</h5>
 			</div>
 			<div class="">
 				<p>Enter customer number</p>
@@ -12,12 +12,14 @@ const ModifyCustomer = (props) => (
 				<input id="modify-fname" placeholder="enter new first name" />
 				<input id="modify-lname" placeholder="enter new last name" />
 				<input id="modify-address" placeholder="enter new address" />
-				<button onClick={props.modify} class="btn">Submit</button>
+				<button onClick={props.modify} class="btn">
+					Submit
+				</button>
 			</div>
 		</div>
-		<div class='card-panel'>
+		<div class="card-panel">
 			<div class="blue">
-				<h5 class='title'>Delete customer</h5>
+				<h5 class="title">Delete customer</h5>
 			</div>
 			<div class="">
 				<p>Enter customer number</p>

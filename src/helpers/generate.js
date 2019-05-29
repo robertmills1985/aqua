@@ -151,7 +151,6 @@ function numLet(input) {
 		}
 	}
 	return isNum;
-	//console.log(`${input} = ${isNum}`)
 }
 
 function getRandomStreet(input) {
@@ -165,9 +164,7 @@ function getRandomStreet(input) {
 	if (newStreet[0] == 'N' || newStreet[0] == 'S') {
 		newStreet.push(road[getRandomInt(road.length)]);
 	}
-	//console.log(newStreet)
 	newStreet = newStreet.join(' ');
-	//console.log(newStreet);
 	return newStreet;
 }
 

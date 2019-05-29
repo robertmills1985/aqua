@@ -1,52 +1,51 @@
 .line-item {
-    border-bottom:solid;
-    border-width: 1px;
-    border-color:green;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: green;
 }
 .button {
-    margin-left:3px;
-    margin-right:3px;
+	margin-left: 3px;
+	margin-right: 3px;
 }
 .c-input {
-    margin-right:15px;
+	margin-right: 15px;
 }
 .edit-btn {
-    margin-left:3px;
-    cursor: pointer;
+	margin-left: 3px;
+	cursor: pointer;
 }
 #delete-input {
-    width:100px;
+	width: 100px;
 }
 #modify-input {
-    width:100px;
+	width: 100px;
 }
 #header {
-    height: 120px;
+	height: 120px;
 }
 #search-panel {
-    padding-left:100px;
-    padding-right:100px;
-    margin-bottom: 50px;
-    padding-top:10px;
-    padding-bottom:10px;
-    
+	padding-left: 100px;
+	padding-right: 100px;
+	margin-bottom: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .title {
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
 #header-title {
-    font-size: 50px;
-    padding-left:30px;
-    padding-top:20px;
+	font-size: 50px;
+	padding-left: 30px;
+	padding-top: 20px;
 }
 #test-panel {
-    position: sticky;
-    bottom:0px;
-    padding-right:25px;
-    padding-left:25px;
-    border-radius:20px;
+	position: sticky;
+	bottom: 0px;
+	padding-right: 25px;
+	padding-left: 25px;
+	border-radius: 20px;
 }

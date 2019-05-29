@@ -74,10 +74,10 @@ function compareNames(a, b) {
 	var longest = 0;
 	if (a.length < b.length) {
 		shortest = a.length;
-		longest = b.length
+		longest = b.length;
 	} else {
 		shortest = b.length;
-		longest = a.length
+		longest = a.length;
 	}
 	var first = a.split('');
 	var second = b.split('');
@@ -113,7 +113,7 @@ function abcOrder(input) {
 			}
 		}
 	}
-	return inputCopy
+	return inputCopy;
 }
 
 export { abcOrder };

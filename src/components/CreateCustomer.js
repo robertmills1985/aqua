@@ -3,7 +3,7 @@ import '../App.css';
 const CreateCustomer = (props) => (
 	<div class="card-panel">
 		<div class="blue">
-			<h5 class='title'>Add a customer</h5>
+			<h5 class="title">Add a customer</h5>
 		</div>
 		<div class="row">
 			<div class="col s4 c-input">

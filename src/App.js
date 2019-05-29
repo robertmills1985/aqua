@@ -52,16 +52,11 @@ class App extends Component {
 		var stateCopy = this.state.customers;
 		var num = input - 1;
 		var select = this.state.customers[num];
-		//console.log(stateCopy.length)
-		//console.log(`state copy = ${stateCopy}`);
-		//console.log(`num = ${num}`);
-		//console.log(`select = ${select}`);
 		for (var i = 0; i < stateCopy.length; i++) {
 			if (stateCopy[i] != select) {
 				newArray.push(stateCopy[i]);
 			}
 		}
-		//console.log(newArray.length)
 		this.setState({
 			customers: newArray
 		});
@@ -73,7 +68,6 @@ class App extends Component {
 		var select = this.state.customers[num].split(' ');
 		var addy = select.slice(2, 6).join(' ');
 		var newCustomer = [];
-		//console.log(addy)
 		var first = document.getElementById('modify-fname').value;
 		var last = document.getElementById('modify-lname').value;
 		var address = document.getElementById('modify-address').value;
@@ -91,7 +85,6 @@ class App extends Component {
 		stateCopy[num] = newCustomer;
 		stateCopy = abcOrder(stateCopy);
 
-		//console.log(stateCopy);
 		this.setState({
 			customers: stateCopy
 		});
@@ -101,10 +94,10 @@ class App extends Component {
 		clear('modify-address');
 	}
 	handleSearch(input) {
-		var copy = input
+		var copy = input;
 		var stateCopy = this.state.customers;
 		var resultsArray = [];
-		
+
 		for (var i = 0; i < stateCopy.length; i++) {
 			var foundArray = [];
 			var fName = stateCopy[i].split(' ')[0];
@@ -113,23 +106,23 @@ class App extends Component {
 				resultsArray.push(<li>{`${i + 1}. ${stateCopy[i]}`}</li>);
 			}
 		}
-		
+
 		this.setState({
 			results: resultsArray
 		});
-		
+
 		clear('search-input');
-		if(resultsArray.length === 0){
-			document.getElementById('total-found').innerHTML = 'Nothing was found, try something else.'
-			document.getElementById('search-input').value = copy
-		} 
+		if (resultsArray.length === 0) {
+			document.getElementById('total-found').innerHTML = 'Nothing was found, try something else.';
+			document.getElementById('search-input').value = copy;
+		}
 	}
 
 	render() {
 		return (
 			<div>
 				<header id="header" class="blue white-text">
-					<p id='header-title'>Aqua</p>
+					<p id="header-title">Aqua</p>
 				</header>
 				<div>
 					<Search

@@ -2,8 +2,8 @@ import React from 'react';
 import '../App.css';
 
 const Test = (props) => (
-	<div id="test-panel" class='blue lighten-4'>
-		<div >
+	<div id="test-panel" class="blue lighten-4">
+		<div>
 			<div class="row blue lighten-4 text-white">
 				<p>Enter a number and click generate</p>
 				<input id="test-input" class="white col s6" placeholder="enter something..." />
