@@ -6,13 +6,19 @@ import { generate } from './helpers/generate';
 import { abcOrder } from './helpers/abcOrder';
 import './App.css';
 import ModifyCustomer from './components/ModifyCustomer';
+import Search from './components/Search';
+
+function clear(input) {
+	document.getElementById(input).value = '';
+}
 
 class App extends Component {
 	constructor() {
 		super();
 
 		this.state = {
-			customers: []
+			customers: [],
+			results: []
 		};
 	}
 	handleGenerate() {
@@ -21,6 +27,7 @@ class App extends Component {
 		this.setState({
 			customers: newCustomers
 		});
+		clear('test-input');
 	}
 	handleCreateCustomer(input) {
 		var customers = input;
@@ -36,6 +43,9 @@ class App extends Component {
 		this.setState({
 			customers: customers
 		});
+		clear('c-fname');
+		clear('c-lname');
+		clear('c-address');
 	}
 	handleDelete(input) {
 		var newArray = [];
@@ -55,9 +65,10 @@ class App extends Component {
 		this.setState({
 			customers: newArray
 		});
+		clear('delete-input');
 	}
 	handleModify(input) {
-		var stateCopy = this.state.customers
+		var stateCopy = this.state.customers;
 		var num = input - 1;
 		var select = this.state.customers[num].split(' ');
 		var addy = select.slice(2, 6).join(' ');
@@ -77,19 +88,56 @@ class App extends Component {
 			}
 		}
 		newCustomer = newCustomer.join(' ');
-		stateCopy[num] = newCustomer
-		stateCopy = abcOrder(stateCopy)
+		stateCopy[num] = newCustomer;
+		stateCopy = abcOrder(stateCopy);
 
 		//console.log(stateCopy);
 		this.setState({
-			customers:stateCopy
-		})
+			customers: stateCopy
+		});
+		clear('modify-input');
+		clear('modify-lname');
+		clear('modify-fname');
+		clear('modify-address');
+	}
+	handleSearch(input) {
+		var copy = input
+		var stateCopy = this.state.customers;
+		var resultsArray = [];
+		
+		for (var i = 0; i < stateCopy.length; i++) {
+			var foundArray = [];
+			var fName = stateCopy[i].split(' ')[0];
+			var lName = stateCopy[i].split(' ')[1];
+			if (input === fName || input === lName) {
+				resultsArray.push(<li>{`${i + 1}. ${stateCopy[i]}`}</li>);
+			}
+		}
+		
+		this.setState({
+			results: resultsArray
+		});
+		
+		clear('search-input');
+		if(resultsArray.length === 0){
+			document.getElementById('total-found').innerHTML = 'Nothing was found, try something else.'
+			document.getElementById('search-input').value = copy
+		} 
 	}
 
 	render() {
 		return (
-			<div class="container">
-				<div class="row">
+			<div>
+				<header id="header" class="blue white-text">
+					<p id='header-title'>Aqua</p>
+				</header>
+				<div>
+					<Search
+						search={() => this.handleSearch(document.getElementById('search-input').value)}
+						results={this.state.results}
+					/>
+				</div>
+				<div class=" container row">
 					<div class="col s6">
 						<CustomerList customers={this.state.customers} />
 					</div>

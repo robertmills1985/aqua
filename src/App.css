@@ -20,3 +20,33 @@
 #modify-input {
     width:100px;
 }
+#header {
+    height: 120px;
+}
+#search-panel {
+    padding-left:100px;
+    padding-right:100px;
+    margin-bottom: 50px;
+    padding-top:10px;
+    padding-bottom:10px;
+    
+}
+.title {
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#header-title {
+    font-size: 50px;
+    padding-left:30px;
+    padding-top:20px;
+}
+#test-panel {
+    position: sticky;
+    bottom:0px;
+    padding-right:25px;
+    padding-left:25px;
+    border-radius:20px;
+}
