@@ -1,5 +1,5 @@
 import React from 'react';
-
+/*  This component is the interface for how a user would modify existing data */
 const ModifyCustomer = (props) => (
 	<div>
 		<div class="card-panel ">

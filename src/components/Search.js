@@ -1,5 +1,5 @@
 import React from 'react';
-
+/*This component is the interface for how a user can search for specific data */
 const Search = (props) => (
 	<div>
 		<div id="search-panel" class="blue lighten-4 hoverable">

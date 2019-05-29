@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+/*This component is the interface for how the user can create data*/
 const CreateCustomer = (props) => (
 	<div class="card-panel">
 		<div class="blue">
