@@ -1,14 +1,14 @@
 import React from 'react';
 import '../App.css';
 
-function list(input) {
+function list(input) {	
 	var newArray = [];
 	if (input === null || input == undefined) {
 	} else {
 		for (var i = 0; i < input.length; i++) {
 			newArray.push(
 				<div>
-					<li id={'customer ' + i} class="col s10 line-item">
+					<li id={i}  class="col s10 line-item">
 						{input[i]}
 					</li>
 				</div>
