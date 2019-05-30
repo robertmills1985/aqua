@@ -115,7 +115,6 @@ class App extends Component {
 		var resultsArray = [];
 
 		for (var i = 0; i < stateCopy.length; i++) {
-			var foundArray = [];
 			var fName = stateCopy[i].split(' ')[0];
 			var lName = stateCopy[i].split(' ')[1];
 			if (input === fName || input === lName) {

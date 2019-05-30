@@ -70,13 +70,10 @@ function letterValue(input) {
 if "a" does come before "b", or not, returns a boolean */
 function compareNames(a, b) {
 	var answer = true;
-	var shortest = 0;
 	var longest = 0;
 	if (a.length < b.length) {
-		shortest = a.length;
 		longest = b.length;
 	} else {
-		shortest = b.length;
 		longest = a.length;
 	}
 	var first = a.split('');

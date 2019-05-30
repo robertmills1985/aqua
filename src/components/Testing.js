@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 /* This component is the interface for a panel that is used to generate a desired amount of randomly generated data  */
 const Test = (props) => (
-	<div id="test-panel" class="blue lighten-4">
+	<div id="test-panel" class="blue lighten-4 z-depth-5">
 		<div>
 			<div class="row blue lighten-4 text-white">
 				<p>Enter a number and click generate</p>

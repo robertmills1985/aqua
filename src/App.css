@@ -45,7 +45,8 @@
 #test-panel {
 	position: sticky;
 	bottom: 0px;
-	padding-right: 25px;
-	padding-left: 25px;
+	padding-right: 155px;
+	padding-left: 155px;
 	border-radius: 20px;
+	width:1000px;
 }
